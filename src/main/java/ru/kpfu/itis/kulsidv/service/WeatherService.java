@@ -1,6 +1,5 @@
 package ru.kpfu.itis.kulsidv.service;
 
-import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 import ru.kpfu.itis.kulsidv.dao.WeatherDao;
 
@@ -13,9 +12,9 @@ public class WeatherService {
 
     public String sayWeather(String city) throws MalformedURLException {
         String resposeString = weatherDao.read(city);
-        JSONObject jsonResponse = new JSONObject(resposeString);
-        double temperature = jsonResponse.getJSONObject("main").getDouble("temp");
+//        JSONObject jsonResponse = new JSONObject(resposeString);
+//        double temperature = jsonResponse.getJSONObject("main").getDouble("temp");
 
-        return String.format("Temperature in %s: %f", city, temperature);
+        return String.format("Temperature in %s: %f", city, 0);
     }
 }
